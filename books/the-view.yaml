@@ -1,0 +1,47 @@
+---
+cover:
+  - text: The View
+  - text: Dorian Voegeli
+  - text: 2015
+  - picture: /images/blinds.jpg
+  - choice: >
+      Start reading.
+    go: in the kitchen near the blinds
+in the kitchen near the blinds:
+  - text: >
+      He goes to the kitchen, which only has one window. The kitchen is small, with the floor just barely the width
+      of the window. Outside looks nice through the thin, plastic openings of the window's blinds. Walking across the
+      kitchen towards the window, he wants a better view.
+  - choice: >
+      He reaches up to twist open the blinds.
+    go: twist rod to open blinds
+  - choice: >
+      He tugs the stubborn cord, trying to force open the blinds.
+    go: pull cord to open blinds
+twist rod to open blinds:
+  - text: >
+      The rod rolls between his fingertips. Slowly, the blinds open to reveal flat slices of the view.
+  - picture: /images/twist.jpg
+  - choice: >
+      He looks out the window.
+    go: looking at the view
+pull cord to open blinds:
+  - text: >
+      Off the fixture come the blinds, hitting him in the head. They crash to the floor, crooked and bent.
+  - picture: /images/fallen.jpg
+  - choice: >
+      He looks out the window.
+    go: looking at the view
+looking at the view:
+  - text: >
+      A chuckle turns into laughter as he looks through the window at the view.
+  - choice: >
+      The End
+    go: the end
+the end:
+  - choice: >
+      Start over?
+    go: cover
+  - choice: >
+      Come back later?
+    exit:
