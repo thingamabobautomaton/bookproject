@@ -55,7 +55,7 @@ var viewer = (function() {
     }
     function renderPicture(entry){
 
-        var picture = '<img class="img-responsive" src="' + entry.picture + '">';
+        var picture = '<img class="img-responsive center-block" src="' + entry.picture + '">';
         return createRow(picture);
     }
     function renderChoice(entry){
