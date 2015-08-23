@@ -9,7 +9,8 @@ var viewer = (function() {
     var book;
 
     var content = $('#content');
-    content.on('click', '.btn', function () {
+    content.on('click', '.btn', function (event) {
+        event.preventDefault();
         Viewer.render(this.id);
     });
 
@@ -48,19 +49,24 @@ var viewer = (function() {
         var text = '<p>' + entry.text + '</p>';
         return createRow(text);
     }
+    function renderTitle(entry){
+        var text = '<h3>' + entry.title + '</h3>';
+        return createRow(text);
+    }
     function renderPicture(entry){
 
-        var picture = '<img src="' + entry.picture + '">';
+        var picture = '<img class="img-responsive" src="' + entry.picture + '">';
         return createRow(picture);
     }
     function renderChoice(entry){
-        var choice = '<button id="' + entry.go + '" class="btn btn-default btn-block">' + entry.choice + '</button>';
+        var choice = '<button id="' + entry.go + '" class="btn btn-default btn-block btn-multiline">' + entry.choice + '</button>';
         return createRow(choice);
     }
 
     function render(entry) {
         var type = _.keys(entry)[0];
         var element = {
+            title:      function(){ return renderTitle(entry)},
             text:       function(){ return renderText(entry)},
             picture:    function(){ return renderPicture(entry)},
             choice:     function(){ return renderChoice(entry)}

@@ -1,8 +1,7 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  margin-top: 1cm;
 }
 
-a {
-  color: #00B7FF;
+.btn-multiline {
+  white-space: normal;
 }
